@@ -8,32 +8,31 @@ use App\Coba;
 class CobaController extends Controller
 {
     //
-    public function test()
+   public function test()
     {
     	$a = coba::all();
     	return $a;
     }
 
 //parameter
-     public function test2($id)
+     public function test3($id)
     {
     	$a = coba::find($id);
     	return $a;
     }
-
-    public function test3()
+//latihan nama-kelas-jurusan-jenis kelamin
+    public function test2($id)
     {
-    	$tampilan = Coba::all();
-    	return view('index6', compact('tampilan'));
+    	$tampilan = Coba::find($id);
+    	return $tampilan;
     }
 
-//foreach
+//foreach buah
     public function percobaan5()
     {
     	$buah = ['Mangga', 'Jeruk', 'Apel', 'Anggur', 'Manggis'];
     	return view('buah', compact('buah'));
     }
-
 
     public function ulang()
     {
@@ -41,7 +40,8 @@ class CobaController extends Controller
     	return view('index', compact('data'));
     }
 
-    public function test($a)
+//latihan foreach (menggabungkan)
+    public function test8($a)
     {
     	$data = ['binatang' => ['kucing', 'kelinci', 'singa','lumba-lumba','koala'],
     	'kendaraan' => ['motor', 'mobil', 'sepeda','pesawat','kereta'],
@@ -49,4 +49,12 @@ class CobaController extends Controller
     	$kopi = $data[$a];
     	return view('index', compact('kopi'));
     }
+
+//latihan parameter menggunakan like dan %(persen)
+     public function testing($id)
+    {
+        $tampilan = Coba::where('jurusan', 'like', $id)-> orwhere('nama', 'like', $id)->get(); 
+        return $tampilan;
+    }
+
 }

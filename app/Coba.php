@@ -8,7 +8,7 @@ class Coba extends Model
 {
     //
     protected $table ='coba';
-    protected $fillable =['nama', 'kelas', 'jurusan', 'jenis kelamin'];
-    protected $visible =['nama', 'kelas', 'jurusan', 'jenis kelamin'];
+    protected $fillable =['nama', 'kelas', 'jurusan', 'jenis_kelamin'];
+    protected $visible =['nama', 'kelas', 'jurusan', 'jenis_kelamin'];
     public $timestamps = true;
 };

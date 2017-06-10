@@ -56,7 +56,7 @@ Route::get('/{id}','CobaController@test2');
 */
 
 
-//Route::get('test6/{id}','CobaController@test3');
+//Route::get('test/{id}','CobaController@testing');
 
 
 //foreach
@@ -64,4 +64,6 @@ Route::get('/{id}','CobaController@test2');
 
 // Route::get('/{id}','CobaController@binatang');
 
-Route::get('/{a}','CobaController@test');
+//Route::get('/{a}','CobaController@test');
+
+Route::resource('post', 'PostController');
